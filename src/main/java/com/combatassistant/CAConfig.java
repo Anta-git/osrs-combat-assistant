@@ -8,10 +8,11 @@ import net.runelite.client.config.ConfigItem;
 public interface CAConfig extends Config
 {
 	@ConfigItem(
-		keyName = "greeting",
-		name = "Welcome Greeting",
-		description = "The message to show to the user when they login"
+			keyName = "showAlways",
+			name = "Show even off hover",
+			description = "Keep showing last target when mouse not over NPC"
 	)
+	default boolean showAlways() { return false; }
 	default String greeting()
 	{
 		return "Hello";
